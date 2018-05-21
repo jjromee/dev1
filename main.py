@@ -1,7 +1,7 @@
 import sys
 import os
 import string
-
+from wordList import listOfWords
 def main():
     #check number of arguments includes one file.
     numArgs = len(sys.argv)
@@ -17,9 +17,7 @@ def main():
         exit(0)
     else:
         file = open(sys.argv[1], "r")
-        #split info into list
-        #create list of each word separated by spaces in read in line
-        words = file.read().split()
+        words = listOfWords(file)
         print words
         #create histogram dictionary holding word and number of occurrences
         hist = {}
