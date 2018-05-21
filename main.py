@@ -3,7 +3,12 @@ import sys
 from wordList import listOfWords
 from histogram import histo, sortHisto, printMe
 from fileOps import passFile, outputFile
+
 def main():
+    """Reads in a file and generates a histogram of words
+    used, sorted from most occurrences to least.
+    Data is stored in output.txt
+    """
     passed = passFile(sys.argv) #verify file exists
     if passed == False:
         exit(0)
