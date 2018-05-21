@@ -1,6 +1,4 @@
 import sys
-import os
-import string
 
 from wordList import listOfWords
 from histogram import histo, sortHisto, printMe
