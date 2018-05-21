@@ -19,6 +19,5 @@ def sortHisto(hist):
 #a number of equal signs that are proportional to the
 #number of occurrences found in the text, and the number of occurrences itself.
 def printMe(sortedHist):
-    for key, value in sortedHist:
-        print key, '|', ('=' * value), '({})'.format(value)
-
+    for word, value in sortedHist:
+        print word, '|', ('=' * value), '({})'.format(value)
