@@ -3,7 +3,7 @@ import os
 import string
 
 from wordList import listOfWords
-from histogram import histo, sortHisto
+from histogram import histo, sortHisto, printMe
 from fileOps import passFile
 def main():
     passed = passFile(sys.argv)
@@ -12,13 +12,10 @@ def main():
     else:
         file = open(sys.argv[1], "r")
         words = listOfWords(file)
-        print words
-        #create histogram dictionary holding word and number of occurrences
+        #print words
         hist = histo(words)
-        print hist
         sortedHist = sortHisto(hist)
-        print sortedHist
-
+        printMe(sortedHist)
         file.close()
 
 main()
