@@ -1,7 +1,9 @@
 import sys
 import os
 import string
+
 from wordList import listOfWords
+from histogram import histo, sortHisto
 def main():
     #check number of arguments includes one file.
     numArgs = len(sys.argv)
@@ -20,14 +22,11 @@ def main():
         words = listOfWords(file)
         print words
         #create histogram dictionary holding word and number of occurrences
-        hist = {}
-        for word in words:
-            word = word.lower() #set to lowercase to increment count with same word no matter punctuation
-            word = word.strip(string.punctuation + string.whitespace) #take away any punctuation or whitespace for accuracy
-            hist[word] = hist.get(word, 0) + 1 #count number of occurrences of word, if zero, increments by one, else increment previous num by 1
+        hist = histo(words)
         print hist
-        sortedHist = sorted(hist.items(), key = lambda x: x[1], reverse = True)
+        sortedHist = sortHisto(hist)
         print sortedHist
+
         file.close()
 
 main()

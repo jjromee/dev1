@@ -8,3 +8,7 @@ def histo(words):
       word = word.strip(string.punctuation + string.whitespace) #take away any punctuation or whitespace for accuracy
       hist[word] = hist.get(word, 0) + 1 #count number of occurrences of word, if zero, increments by one, else increment previous num by 1
     return hist
+
+def sortHisto(hist):
+    sortedHist = sorted(hist.items(), key = lambda x: x[1], reverse = True)
+    return sortedHist
